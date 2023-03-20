@@ -7,14 +7,15 @@ import MovieContainer from "./movieContainer";
 
 const Movie = () =>{
     const {id} = useParams();
+    console.log(id);
     const [movie, setSingleMovie] = useState({});
     useEffect(() => {
     const fetchData = async () => {
-      const res = await singleMovie();
+      const res = await singleMovie(id);
       setSingleMovie(res);
       console.log(movie)
     };
-    if(typeof is !=='undefined'){
+    if(id){
         fetchData();
     }
   }, [id]);
